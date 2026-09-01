@@ -1,11 +1,33 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Đức Mạnh & Hà My - 02.05.2026 | Lễ Thành Hôn",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://ducmanh-hamy-wedding.vercel.app'),
+  title: "Đức Mạnh & Hà My - 20.09.2026 | Lễ Thành Hôn",
   description: "Trân trọng kính mời Quý khách tới dự bữa tiệc chung vui cùng gia đình chúng tôi!",
   icons: {
     icon: "/templates/wedding/002/images/decor-flower1.png",
-  }
+  },
+  openGraph: {
+    title: "Đức Mạnh & Hà My - 20.09.2026 | Lễ Thành Hôn",
+    description: "Trân trọng kính mời Quý khách tới dự bữa tiệc chung vui cùng gia đình chúng tôi!",
+    images: [
+      {
+        url: "/assets/images/og-image.jpg",
+        width: 1200,
+        height: 1500,
+        alt: "Đức Mạnh & Hà My - Wedding Invitation",
+      },
+    ],
+    locale: "vi_VN",
+    type: "website",
+    siteName: "Đức Mạnh & Hà My Wedding",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Đức Mạnh & Hà My - 20.09.2026 | Lễ Thành Hôn",
+    description: "Trân trọng kính mời Quý khách tới dự bữa tiệc chung vui cùng gia đình chúng tôi!",
+    images: ["/assets/images/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({ children }) {

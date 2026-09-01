@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 const SAMPLE_WISHES = [
   { name: "Minh Tuấn", message: "Chúc mừng hai bạn! Chúc cho hai bạn mãi hạnh phúc bên nhau nhé 💕" },
   { name: "Lan Anh", message: "Chúc mừng hôn lễ! Mong hai bạn luôn yêu thương và trân trọng nhau 🌹" },
-  { name: "Hùng Sơn", message: "Congratulations! Wishing you both a lifetime of love and happiness 🎉" },
+  { name: "Hùng Sơn", message: "Chúc mừng hai bạn! Chúc hai bạn một đời yêu thương và hạnh phúc trọn vẹn 🎉" },
 ];
 
 export default function GuestbookSection() {
@@ -17,13 +17,17 @@ export default function GuestbookSection() {
 
   // Load from localStorage
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem("wedding_wishes");
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        setWishes([...SAMPLE_WISHES, ...parsed]);
-      }
-    } catch {}
+    const loadWishes = () => {
+      try {
+        const saved = localStorage.getItem("wedding_wishes");
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          setWishes([...SAMPLE_WISHES, ...parsed]);
+        }
+      } catch {}
+    };
+    
+    loadWishes();
   }, []);
 
   const handleSubmit = (e) => {

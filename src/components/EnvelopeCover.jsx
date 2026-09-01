@@ -51,10 +51,10 @@ export default function EnvelopeCover({ onOpen }) {
         {/* Save the date text */}
         <div className="mt-[10vh] pl-16 relative">
           <span className="absolute left-0 bottom-[-20px] font-dancing text-[80px] leading-[0.8] text-white/95">
-            S
+            H
           </span>
           <div className="font-dancing text-[36px] leading-none text-white/95 whitespace-nowrap">
-            ave the date
+            ãy giữ ngày này
           </div>
         </div>
 
@@ -88,6 +88,7 @@ export default function EnvelopeCover({ onOpen }) {
           <div className="absolute inset-0 rounded-full border-2 border-gold-ring/60 animate-pulse-slow pointer-events-none" />
           {/* Seal core */}
           <div className="w-[74px] h-[74px] rounded-full bg-gold-seal flex items-center justify-center shadow-lg border border-gold-ring/30">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/images/side-card-icon.png"
               alt="Mở thiệp"

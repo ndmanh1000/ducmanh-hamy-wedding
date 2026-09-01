@@ -2,33 +2,6 @@
 
 import { useState } from "react";
 
-function QRPlaceholder() {
-  return (
-    <div className="w-44 h-44 bg-neutral-50 border border-neutral-200 rounded flex flex-col items-center justify-center p-3 text-center">
-      <svg width="50" height="50" viewBox="0 0 100 100" className="text-[#6d0208]/70 mb-2">
-        <path d="M15,15 h20 v6 h-14 v14 h-6 z" fill="currentColor" />
-        <path d="M65,15 h20 v6 h-14 v14 h-6 z" fill="currentColor" transform="rotate(90 75 25)" />
-        <path d="M65,65 h20 v6 h-14 v14 h-6 z" fill="currentColor" transform="rotate(180 75 75)" />
-        <path d="M15,65 h20 v6 h-14 v14 h-6 z" fill="currentColor" transform="rotate(270 25 75)" />
-        <path d="M50,40 C45,35 37,38 37,45 C37,52 50,60 50,60 C50,60 63,52 63,45 C63,38 55,35 50,40 Z" fill="currentColor" />
-        <rect x="25" y="25" width="8" height="8" fill="currentColor" />
-        <rect x="67" y="25" width="8" height="8" fill="currentColor" />
-        <rect x="25" y="67" width="8" height="8" fill="currentColor" />
-        <circle cx="35" cy="50" r="3" fill="currentColor" />
-        <circle cx="65" cy="50" r="3" fill="currentColor" />
-        <rect x="47" y="25" width="6" height="6" fill="currentColor" />
-        <rect x="47" y="69" width="6" height="6" fill="currentColor" />
-      </svg>
-      <div className="font-lora text-[11px] font-bold text-neutral-600 uppercase tracking-wider">
-        MÃ QR BANK
-      </div>
-      <div className="font-lora text-[9px] text-neutral-400 italic mt-0.5">
-        (Thay ảnh QR tại GiftSection.jsx)
-      </div>
-    </div>
-  );
-}
-
 function GiftModal({ isOpen, onClose, person }) {
   if (!isOpen) return null;
 
@@ -36,14 +9,12 @@ function GiftModal({ isOpen, onClose, person }) {
     groom: {
       title: "Quà mừng cưới chú rể",
       name: "NGUYỄN ĐỨC MẠNH",
-      bank: "Techcombank",
-      account: "8613 8866 88",
+      qrImage: "/assets/images/chure.webp",
     },
     bride: {
       title: "Quà mừng cưới cô dâu",
-      name: "HÀ MY",
-      bank: "Techcombank",
-      account: "1903 6101 4630 15",
+      name: "NGUYỄN HÀ MY",
+      qrImage: "/assets/images/caodau.webp",
     },
   };
 
@@ -55,36 +26,27 @@ function GiftModal({ isOpen, onClose, person }) {
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl overflow-hidden w-full max-w-[340px] shadow-2xl"
+        className="bg-white rounded-2xl overflow-hidden w-full max-w-[360px] shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header photo */}
-        <div
-          className="relative h-36 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url(/placeholders/footer.png)",
-          }}
-        >
-          <div className="absolute inset-0 bg-[#6d0208]/60 flex items-center justify-center">
-            <div className="font-dancing text-white text-[28px] text-center">
-              {data.title}
-            </div>
+        {/* Header title */}
+        <div className="pt-6 px-6 text-center">
+          <div className="font-dancing text-[#6d0208] text-[30px] leading-tight">
+            {data.title}
           </div>
+          <div className="w-14 h-px bg-[#6d0208]/40 mx-auto mt-2" />
         </div>
 
         {/* QR code + info */}
-        <div className="p-6 flex flex-col items-center gap-3">
-          <QRPlaceholder />
+        <div className="px-6 pt-5 pb-6 flex flex-col items-center gap-3">
+          <img
+            src={data.qrImage}
+            alt={`QR ${data.name}`}
+            className="w-full max-w-[300px] h-auto object-contain rounded-lg"
+          />
           <div className="text-center">
             <div className="font-lora font-bold text-neutral-800 text-[16px]">
               {data.name}
-            </div>
-            <div className="font-lora text-neutral-500 text-[13px]">
-              {data.bank}
-            </div>
-            <div className="font-lora text-[#6d0208] font-bold text-[18px] tracking-widest mt-1">
-              {data.account}
             </div>
           </div>
           <button

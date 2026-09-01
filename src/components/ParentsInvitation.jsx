@@ -11,8 +11,8 @@ export default function ParentsInvitation() {
             Nhà trai
           </div>
           <div className="font-lora text-[13px] text-neutral-700 leading-7">
-            <div>Ông: Hoàng Hiển</div>
-            <div>Bà: Nông Thị Sinh</div>
+            <div>Ông: Nguyễn Văn Giáp</div>
+            <div>Bà: Lê Thị Thanh Vân</div>
           </div>
         </div>
 
@@ -22,8 +22,8 @@ export default function ParentsInvitation() {
             Nhà gái
           </div>
           <div className="font-lora text-[13px] text-neutral-700 leading-7">
-            <div>Ông: Nguyễn Đình Thông</div>
-            <div>Bà: Hoàng Thị Hiền</div>
+            <div>Ông: Nguyễn Văn Hưng</div>
+            <div>Bà: Hoàng Thị Xuân Hương</div>
           </div>
         </div>
       </div>

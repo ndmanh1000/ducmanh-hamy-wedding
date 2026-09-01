@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const WEDDING_DATE = new Date("2026-05-02T09:30:00+07:00");
+const WEDDING_DATE = new Date("2026-09-20T09:30:00+07:00");
 
 const DAYS = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"];
 
@@ -45,7 +45,7 @@ export default function CalendarCountdown() {
     return () => clearInterval(id);
   }, []);
 
-  const cells = buildCalendar(2026, 5);
+  const cells = buildCalendar(2026, 9);
 
   return (
     <div className="bg-paper py-10 px-5">
@@ -55,7 +55,7 @@ export default function CalendarCountdown() {
           2026
         </span>
         <span className="font-dancing text-[#6d0208] text-[52px] relative z-10">
-          May
+          Tháng Chín
         </span>
       </div>
 
@@ -76,14 +76,14 @@ export default function CalendarCountdown() {
             <div
               key={idx}
               className={`relative flex items-center justify-center h-8 rounded-full font-lora text-[13px] ${
-                day === 2
+                day === 20
                   ? "bg-[#6d0208] text-white font-bold"
                   : day
                   ? "text-neutral-700"
                   : ""
               }`}
             >
-              {day === 2 && (
+              {day === 20 && (
                 <span className="absolute -top-1 left-1/2 -translate-x-1/2 text-[10px]">
                   ❤️
                 </span>
@@ -97,7 +97,7 @@ export default function CalendarCountdown() {
       {/* Countdown */}
       <div className="text-center">
         <p className="font-lora italic text-neutral-500 text-[13px] mb-4">
-          We&apos;ll be sharing a home and a life together in
+          Chúng mình sẽ cùng chia sẻ một mái nhà và cuộc sống bên nhau trong
         </p>
         <div className="flex justify-center items-center gap-2">
           {[

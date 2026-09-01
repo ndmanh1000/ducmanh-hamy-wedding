@@ -6,7 +6,7 @@ export default function SaveTheDateHero({ isOpened }) {
       id="card-banner"
       className="relative w-full aspect-[420/692] bg-cover bg-top bg-no-repeat overflow-hidden"
       style={{
-        backgroundImage: "url(/placeholders/hero.png)",
+        backgroundImage: "url(/assets/images/bin11.webp)",
       }}
     >
       {/* Bottom gradient overlay */}
@@ -22,10 +22,10 @@ export default function SaveTheDateHero({ isOpened }) {
               : "opacity-0 -translate-y-10"
           }`}
         >
-          <span className="absolute left-0 bottom-[-24px] text-[110px]">
-            S
+          {/* <span className="absolute left-0 bottom-[-24px] text-[110px]">
+            H
           </span>
-          ave the date
+          ãy giữ ngày này */}
         </div>
 
         {/* Names */}
@@ -55,7 +55,7 @@ export default function SaveTheDateHero({ isOpened }) {
               : "opacity-0 translate-y-10"
           }`}
         >
-          02.05.2026
+          20.09.2026
         </div>
       </div>
     </div>

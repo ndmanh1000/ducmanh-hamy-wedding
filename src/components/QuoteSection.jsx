@@ -27,17 +27,17 @@ export default function QuoteSection() {
           className="font-lora uppercase text-white text-[22px] leading-[1.5] tracking-widest"
           style={{ textShadow: "0 1px 6px rgba(0,0,0,0.25)" }}
         >
-          When two hearts
+          Khi hai trái tim
           <br />
-          beat as one
+          đập chung nhịp
         </h2>
 
         <div className="my-4 w-[1px] h-12 bg-white/50" />
 
         <h4 className="font-lora italic text-white/90 text-[17px] leading-[1.7] max-w-[260px]">
-          They create a soul strong
+          Họ tạo nên một tâm hồn mạnh mẽ
           <br />
-          enough to last forever!
+          đủ để tồn tại mãi mãi!
         </h4>
       </div>
     </div>
