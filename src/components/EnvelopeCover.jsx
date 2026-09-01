@@ -8,11 +8,13 @@ export default function EnvelopeCover({ onOpen }) {
 
   const handleOpen = () => {
     if (isAnimating) return;
+
     setIsAnimating(true);
+
     // Play music immediately when clicked
     onOpen();
-    
-    // Remove the envelope from DOM after animation completes (approx 1.5s)
+
+    // Remove envelope after animation
     setTimeout(() => {
       setIsRemoved(true);
     }, 1500);
@@ -23,79 +25,186 @@ export default function EnvelopeCover({ onOpen }) {
   return (
     <div
       id="card-opening-sides"
-      className={`fixed inset-0 z-50 max-w-[575px] mx-auto overflow-hidden bg-transparent pointer-events-auto`}
-      style={{
-        "--slide-card-max-width": "575px",
-        "--slide-card-color": "#6d0208",
-        "--slide-card-stripe-color": "#e9e9e9",
-        "--slide-card-stripe-size": "3.5%",
-        "--slide-seal-size": "80px",
-      }}
+      className="fixed inset-0 z-50 flex justify-center overflow-hidden bg-[#3f0005]"
     >
-      {/* Right side panel */}
       <div
-        className={`absolute top-0 right-0 h-full w-[50%] bg-burgundy z-0 transition-transform duration-[1200ms] ease-in-out ${
-          isAnimating ? "translate-x-full" : "translate-x-0"
-        }`}
-      />
-
-      {/* Left side panel */}
-      <div
-        className={`absolute top-0 left-0 h-full w-[68%] z-10 transition-transform duration-[1200ms] ease-in-out flex flex-col justify-between p-8 text-white ${
-          isAnimating ? "-translate-x-full" : "translate-x-0"
-        }`}
+        className="relative h-full w-full max-w-[575px] overflow-hidden"
         style={{
-          background: `linear-gradient(to right, var(--slide-card-color) 0%, var(--slide-card-color) calc(100% - var(--slide-card-stripe-size)), var(--slide-card-stripe-color) calc(100% - var(--slide-card-stripe-size)), var(--slide-card-stripe-color) 100%)`,
+          "--burgundy": "#6d0208",
+          "--burgundy-dark": "#3f0005",
+          "--gold": "#d6b36a",
+          "--cream": "#f7f0e4",
         }}
       >
-        {/* Save the date text */}
-        <div className="mt-[10vh] pl-16 relative">
-          <span className="absolute left-0 bottom-[-20px] font-dancing text-[80px] leading-[0.8] text-white/95">
-            H
-          </span>
-          <div className="font-dancing text-[36px] leading-none text-white/95 whitespace-nowrap">
-            ãy giữ ngày này
+        {/* ================= BACKGROUND ================= */}
+
+        <div className="absolute inset-0 bg-[var(--burgundy-dark)]" />
+
+        {/* Soft decorative glow */}
+        <div className="absolute -left-[180px] top-[20%] h-[360px] w-[360px] rounded-full bg-[#8d171d] opacity-20 blur-[100px]" />
+
+        <div className="absolute -right-[180px] bottom-[10%] h-[400px] w-[400px] rounded-full bg-[#8d171d] opacity-20 blur-[120px]" />
+
+        {/* ================= RIGHT ENVELOPE ================= */}
+
+        <div
+          className={`absolute right-0 top-0 z-10 h-full w-[50%]
+          bg-[var(--burgundy)]
+          shadow-[-20px_0_60px_rgba(0,0,0,0.15)]
+          transition-transform duration-[1200ms] ease-in-out
+          ${isAnimating ? "translate-x-full" : "translate-x-0"}`}
+        >
+          {/* Right decorative border */}
+          <div className="absolute left-0 top-0 h-full w-px bg-[var(--gold)] opacity-40" />
+
+          {/* Decorative corner */}
+          <div className="absolute right-7 top-7 h-16 w-16 border-r border-t border-[var(--gold)] opacity-50" />
+
+          <div className="absolute bottom-7 right-7 h-16 w-16 border-b border-r border-[var(--gold)] opacity-50" />
+
+          {/* Vertical decoration */}
+          <div className="absolute right-10 top-1/2 flex -translate-y-1/2 flex-col items-center gap-3 opacity-50">
+            <div className="h-16 w-px bg-[var(--gold)]" />
+            <div className="h-2 w-2 rotate-45 border border-[var(--gold)]" />
+            <div className="h-16 w-px bg-[var(--gold)]" />
           </div>
         </div>
 
-        {/* Names */}
-        <div className="flex flex-col gap-2 mt-[-5vh]">
-          <div className="font-dancing text-[40px] leading-tight text-white/90">
-            Đức Mạnh
+        {/* ================= LEFT CARD ================= */}
+
+        <div
+          className={`absolute left-0 top-0 z-20 h-full w-[72%]
+          bg-[var(--burgundy)]
+          shadow-[15px_0_50px_rgba(0,0,0,0.2)]
+          transition-transform duration-[1200ms] ease-in-out
+          ${isAnimating ? "-translate-x-full" : "translate-x-0"}`}
+        >
+          {/* Main border */}
+          <div className="absolute inset-4 border border-[var(--gold)] opacity-40" />
+
+          {/* Inner border */}
+          <div className="absolute inset-7 border border-white/10" />
+
+          {/* Top decoration */}
+          <div className="absolute left-1/2 top-8 flex -translate-x-1/2 items-center gap-3">
+            <div className="h-px w-12 bg-[var(--gold)] opacity-50" />
+
+            <div className="h-2.5 w-2.5 rotate-45 border border-[var(--gold)]" />
+
+            <div className="h-px w-12 bg-[var(--gold)] opacity-50" />
           </div>
-          <div className="font-lora italic text-[28px] leading-none text-white/80 pl-4 rotate-[-4deg]">
-            &
-          </div>
-          <div className="font-dancing text-[40px] leading-tight text-white/90">
-            Hà My
+
+          {/* ================= CONTENT ================= */}
+
+          <div className="relative flex h-full flex-col items-center px-8 text-center text-white">
+            {/* Save the date */}
+
+            <div className="mt-[13vh]">
+              <div className="font-dancing text-[34px] leading-none tracking-wide text-white/95">
+                Save the date
+              </div>
+
+              <div className="mx-auto mt-4 h-px w-20 bg-[var(--gold)] opacity-70" />
+            </div>
+
+            {/* Names */}
+
+            <div className="mt-[12vh] flex flex-col items-center">
+              <div className="font-dancing text-[46px] leading-none text-white">
+                Đức Mạnh
+              </div>
+
+              <div className="my-4 font-lora text-[25px] italic text-[var(--gold)]">
+                &
+              </div>
+
+              <div className="font-dancing text-[46px] leading-none text-white">
+                Hà My
+              </div>
+            </div>
+
+            {/* Invitation */}
+
+            <div className="absolute bottom-[13vh] flex flex-col items-center">
+              <div className="font-lora text-[15px] italic tracking-[0.18em] text-white/80">
+                Trân trọng kính mời!
+              </div>
+
+              <div className="mt-4 flex items-center gap-3">
+                <div className="h-px w-8 bg-[var(--gold)] opacity-50" />
+
+                <div className="h-1.5 w-1.5 rotate-45 bg-[var(--gold)]" />
+
+                <div className="h-px w-8 bg-[var(--gold)] opacity-50" />
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Invitation Text */}
-        <div className="font-lora italic text-[16px] tracking-wide mb-[6vh]">
-          Trân trọng kính mời!
-        </div>
+        {/* ================= WAX SEAL ================= */}
 
-        {/* Wax Seal Button centered on the split */}
         <button
           onClick={handleOpen}
-          className={`absolute right-[-40px] top-[50%] translate-y-[-50%] w-[80px] h-[80px] rounded-full z-20 flex items-center justify-center cursor-pointer select-none transition-all duration-300 hover:scale-105 active:scale-95 ${
-            isAnimating ? "pointer-events-none opacity-0" : ""
+          className={`absolute right-[28%] top-1/2 z-40
+          flex h-[88px] w-[88px]
+          -translate-y-1/2 translate-x-1/2
+          items-center justify-center
+          rounded-full
+          cursor-pointer
+          select-none
+          transition-all duration-300
+          hover:scale-105
+          active:scale-95
+          ${
+            isAnimating
+              ? "pointer-events-none scale-90 opacity-0"
+              : ""
           }`}
           aria-label="Mở thiệp"
         >
-          {/* Pulsing ring outer boundary */}
-          <div className="absolute inset-0 rounded-full border-2 border-gold-ring/60 animate-pulse-slow pointer-events-none" />
-          {/* Seal core */}
-          <div className="w-[74px] h-[74px] rounded-full bg-gold-seal flex items-center justify-center shadow-lg border border-gold-ring/30">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
+          {/* Outer glow */}
+
+          <div className="absolute inset-[-8px] rounded-full border border-[var(--gold)] opacity-30" />
+
+          <div className="absolute inset-[-3px] rounded-full border border-[var(--gold)] opacity-70 animate-pulse-slow" />
+
+          {/* Seal */}
+
+          <div
+            className="relative flex h-[80px] w-[80px]
+            items-center justify-center
+            rounded-full
+            border-2 border-[#b89142]
+            bg-[var(--gold)]
+            shadow-[0_8px_25px_rgba(0,0,0,0.35)]"
+          >
+            {/* Seal inner circle */}
+
+            <div className="absolute inset-[5px] rounded-full border border-[#8f6b28] opacity-60" />
+
+            {/* Icon */}
+
             <img
               src="/assets/images/side-card-icon.png"
               alt="Mở thiệp"
-              className="w-[50px] h-[50px] object-contain drop-shadow"
+              className="relative z-10 h-[50px] w-[50px] object-contain drop-shadow-md"
             />
           </div>
         </button>
+
+        {/* ================= SIDE TEXT ================= */}
+
+        <div
+          className={`absolute bottom-7 right-5 z-30
+          rotate-90 origin-bottom-right
+          font-lora text-[9px]
+          tracking-[0.35em]
+          text-white/40
+          transition-opacity duration-500
+          ${isAnimating ? "opacity-0" : "opacity-100"}`}
+        >
+          OPEN OUR INVITATION
+        </div>
       </div>
     </div>
   );

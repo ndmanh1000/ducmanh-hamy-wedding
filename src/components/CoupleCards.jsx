@@ -27,7 +27,7 @@ export default function CoupleCards() {
         className="relative w-full aspect-[3/4] bg-cover bg-center"
         style={{
           backgroundImage:
-            "url(/assets/images/bin8.webp)",
+            "url(/assets/images/myyy.webp)",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

@@ -10,7 +10,7 @@ const GALLERY = [
   "/assets/images/bin5.webp",
   "/assets/images/bin6.webp",
   "/assets/images/bin7.webp",
-  "/assets/images/bin8.webp",
+  "/assets/images/myyy.webp",
   "/assets/images/bin9.webp",
   "/assets/images/bin10.webp",
   "/assets/images/bin11.webp"
