@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 
+// Ảnh full (1920px) dùng cho lightbox
 const GALLERY = [
   "/assets/images/bin1.webp",
   "/assets/images/bin2.webp",
@@ -16,22 +17,37 @@ const GALLERY = [
   "/assets/images/bin11.webp"
 ];
 
+// Bản thumbnail 600px dùng cho collage + grid.
+// Grid chỉ hiển thị ~280px nên không cần decode ảnh full -> giảm RAM rất nhiều.
+const THUMBS = GALLERY.map((src) =>
+  src.replace("/assets/images/", "/assets/images/thumbs/")
+);
+
 export default function MemoriesGallery() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
+  // Lưu index đã load / lỗi thay vì boolean:
+  // trạng thái được suy ra trực tiếp trong render nên không bao giờ bị lệch
+  // một nhịp khi đổi ảnh (tránh nháy ảnh cũ).
+  const [loadedIndex, setLoadedIndex] = useState(null);
+  const [errorIndex, setErrorIndex] = useState(null);
+
+  const imageLoaded = loadedIndex === selectedIndex;
+  const imageError = errorIndex === selectedIndex;
 
   const handlePrev = useCallback(() => {
-    if (selectedIndex === null) return;
-    setSelectedIndex((selectedIndex - 1 + GALLERY.length) % GALLERY.length);
-  }, [selectedIndex]);
+    setSelectedIndex((i) =>
+      i === null ? i : (i - 1 + GALLERY.length) % GALLERY.length
+    );
+  }, []);
 
   const handleNext = useCallback(() => {
-    if (selectedIndex === null) return;
-    setSelectedIndex((selectedIndex + 1) % GALLERY.length);
-  }, [selectedIndex]);
+    setSelectedIndex((i) => (i === null ? i : (i + 1) % GALLERY.length));
+  }, []);
 
   // Close on ESC key
   useEffect(() => {
+    if (selectedIndex === null) return;
     const handleKeyDown = (e) => {
       if (e.key === "Escape") setSelectedIndex(null);
       if (e.key === "ArrowLeft") handlePrev();
@@ -82,21 +98,21 @@ export default function MemoriesGallery() {
       <div className="flex items-end gap-2 mb-2 h-[220px]">
         <div className="flex-1 h-[180px] cursor-pointer" onClick={() => setSelectedIndex(0)}>
           <img
-            src={GALLERY[0]}
+            src={THUMBS[0]}
             alt="Kỷ niệm cưới"
             className="w-full h-full object-cover rounded hover:opacity-90 transition-opacity"
           />
         </div>
         <div className="flex-1 h-[220px] cursor-pointer" onClick={() => setSelectedIndex(1)}>
           <img
-            src={GALLERY[1]}
+            src={THUMBS[1]}
             alt="Kỷ niệm cưới"
             className="w-full h-full object-cover rounded hover:opacity-90 transition-opacity"
           />
         </div>
         <div className="flex-1 h-[180px] cursor-pointer" onClick={() => setSelectedIndex(2)}>
           <img
-            src={GALLERY[2]}
+            src={THUMBS[2]}
             alt="Kỷ niệm cưới"
             className="w-full h-full object-cover rounded hover:opacity-90 transition-opacity"
           />
@@ -105,7 +121,7 @@ export default function MemoriesGallery() {
 
       {/* 2-column grid of remaining photos */}
       <div className="grid grid-cols-2 gap-2 mt-2">
-        {GALLERY.slice(3).map((src, i) => (
+        {THUMBS.slice(3).map((src, i) => (
           <div
             key={i}
             className="aspect-square overflow-hidden rounded cursor-pointer"
@@ -152,13 +168,47 @@ export default function MemoriesGallery() {
             ‹
           </button>
 
-          {/* Image */}
-          <img
-            src={GALLERY[selectedIndex]}
-            alt="Kỷ niệm cưới"
-            className="max-w-[90vw] max-h-[90vh] object-contain"
-            onClick={(e) => e.stopPropagation()}
-          />
+          {/* Image with loading state and error handling */}
+          <div className="relative flex items-center justify-center">
+            {/* Loading spinner */}
+            {!imageLoaded && !imageError && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-12 h-12 border-4 border-white/20 border-t-white rounded-full animate-spin"></div>
+              </div>
+            )}
+
+            {/* Error message */}
+            {imageError && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-white text-center px-4">
+                  <div className="text-4xl mb-2">⚠️</div>
+                  <div className="text-lg">Không thể tải ảnh</div>
+                  <div className="text-sm text-white/60 mt-2">Ảnh quá lớn hoặc lỗi mạng</div>
+                </div>
+              </div>
+            )}
+
+            {/* Main image with lazy loading */}
+            <img
+              src={GALLERY[selectedIndex]}
+              alt="Kỷ niệm cưới"
+              className={`max-w-[90vw] max-h-[90vh] object-contain transition-opacity duration-300 ${
+                imageLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              onClick={(e) => e.stopPropagation()}
+              onLoad={() => {
+                setLoadedIndex(selectedIndex);
+                setErrorIndex(null);
+              }}
+              onError={() => {
+                setErrorIndex(selectedIndex);
+                setLoadedIndex(null);
+                console.error(`Failed to load image: ${GALLERY[selectedIndex]}`);
+              }}
+              loading="eager"
+              decoding="async"
+            />
+          </div>
 
           {/* Next button */}
           <button

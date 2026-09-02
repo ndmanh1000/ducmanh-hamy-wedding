@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Original high-res images (backup by resize script)
+/public/assets/images/originals/
+

@@ -5,7 +5,7 @@ export default function FooterSection() {
     <>
       {/* Footer photo with quote */}
       <div
-        className="relative w-full aspect-[4/3] bg-cover bg-center overflow-hidden"
+        className="relative w-full aspect-[4/3] bg-cover bg-[center_38%] overflow-hidden"
         style={{
           backgroundImage:
             "url(/assets/images/bin6.webp)",
