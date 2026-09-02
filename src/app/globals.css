@@ -61,19 +61,19 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary-burgundy: #6d0208;
-  --primary-olive: #27321c;
-  --gold-seal: #b0852b;
-  --gold-ring: #8a6a2a;
+  --primary-earth: #5C3D2E;
+  --primary-dark: #2B1D14;
+  --accent-terracotta: #B96420;
+  --cream-warm: #F5EFE6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-burgundy: var(--primary-burgundy);
-  --color-olive: var(--primary-olive);
-  --color-gold-seal: var(--gold-seal);
-  --color-gold-ring: var(--gold-ring);
+  --color-earth: var(--primary-earth);
+  --color-dark: var(--primary-dark);
+  --color-terracotta: var(--accent-terracotta);
+  --color-cream: var(--cream-warm);
   
   --font-dancing: "DancingScript", cursive;
   --font-lora: "Lora", serif;
@@ -99,7 +99,7 @@ body {
   background: rgba(0, 0, 0, 0.05);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-burgundy);
+  background: var(--primary-earth);
   border-radius: 3px;
 }
 
@@ -113,11 +113,11 @@ body {
 @keyframes pulse-slow {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(176, 133, 43, 0.4);
+    box-shadow: 0 0 0 0 rgba(185, 100, 32, 0.4);
   }
   50% {
     transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(176, 133, 43, 0);
+    box-shadow: 0 0 0 10px rgba(185, 100, 32, 0);
   }
 }
 

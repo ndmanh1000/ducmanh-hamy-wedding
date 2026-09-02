@@ -5,33 +5,33 @@ export default function CeremonyDetails() {
     <div className="bg-paper py-10 px-5">
       <div className="space-y-6">
         {/* Event 1: Lễ Thành Hôn */}
-        <div className="border border-[#6d0208]/20 rounded-lg overflow-hidden">
-          <div className="bg-[#6d0208] text-white text-center py-2 font-lora text-xs uppercase tracking-widest">
+        <div className="border border-[#5C3D2E]/20 rounded-lg overflow-hidden">
+          <div className="bg-[#5C3D2E] text-white text-center py-2 font-lora text-xs uppercase tracking-widest">
             Lễ Thành Hôn
           </div>
           <div className="p-5 bg-white/60">
             {/* Time row */}
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="font-lora text-[#6d0208] text-[18px] font-semibold">
+              <div className="font-lora text-[#5C3D2E] text-[18px] font-semibold">
                 09 giờ
               </div>
-              <div className="w-px h-8 bg-[#6d0208]/30" />
+              <div className="w-px h-8 bg-[#5C3D2E]/30" />
               <div className="text-center">
                 <div className="flex gap-1">
                   {["20", "09", "26"].map((n, i) => (
                     <div
                       key={i}
-                      className="font-lora text-[#6d0208] font-bold text-[20px] leading-none"
+                      className="font-lora text-[#5C3D2E] font-bold text-[20px] leading-none"
                     >
                       {n}
                       {i < 2 && (
-                        <span className="text-[#6d0208]/50 mx-0.5">/</span>
+                        <span className="text-[#5C3D2E]/50 mx-0.5">/</span>
                       )}
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="w-px h-8 bg-[#6d0208]/30" />
+              <div className="w-px h-8 bg-[#5C3D2E]/30" />
               <div className="font-lora text-neutral-600 text-[14px]">
                 Chủ nhật
               </div>
@@ -41,8 +41,8 @@ export default function CeremonyDetails() {
               (Tức ngày 10 tháng 8 năm Bính Ngọ)
             </p>
 
-            <div className="border-t border-[#6d0208]/10 pt-4">
-              <div className="text-xs uppercase tracking-widest text-[#6d0208]/70 font-lora mb-1 text-center">
+            <div className="border-t border-[#5C3D2E]/10 pt-4">
+              <div className="text-xs uppercase tracking-widest text-[#5C3D2E]/70 font-lora mb-1 text-center">
                 Địa điểm
               </div>
               <div className="text-center font-lora font-semibold text-neutral-700 text-[14px] mb-1">
@@ -55,7 +55,7 @@ export default function CeremonyDetails() {
               </div>
 
               {/* Embedded map */}
-              <div className="mt-4 rounded-lg overflow-hidden border border-[#6d0208]/15">
+              <div className="mt-4 rounded-lg overflow-hidden border border-[#5C3D2E]/15">
                 <iframe
                   title="Bản đồ tư gia nhà trai - Khu 6, Vĩnh Lại, Bản Nguyên, Phú Thọ"
                   src="https://www.google.com/maps?q=21.2598025,105.3423005&hl=vi&z=16&output=embed"
@@ -74,7 +74,7 @@ export default function CeremonyDetails() {
                   href="https://www.google.com/maps/place/khu+6+v%C4%A9nh+l%E1%BA%A1i+l%C3%A2m+thao+ph%C3%BA+th%E1%BB%8D/@21.2598025,105.3423005,1146m/data=!3m2!1e3!4b1!4m6!3m5!1s0x31348d0074bcc6cb:0xdf003758a935b816!8m2!3d21.2598025!4d105.3423005!16s%2Fg%2F11yfmtsbwm!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-[#6d0208] text-white font-lora text-xs uppercase tracking-widest px-5 py-2 rounded-full hover:bg-[#8a0210] transition-colors"
+                  className="flex items-center gap-2 bg-[#5C3D2E] text-white font-lora text-xs uppercase tracking-widest px-5 py-2 rounded-full hover:bg-[#7d5740] transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -97,31 +97,31 @@ export default function CeremonyDetails() {
         </div>
 
         {/* Event 2: Tiệc Thân Mật */}
-        <div className="border border-[#6d0208]/20 rounded-lg overflow-hidden">
-          <div className="bg-[#6d0208] text-white text-center py-2 font-lora text-xs uppercase tracking-widest">
+        <div className="border border-[#5C3D2E]/20 rounded-lg overflow-hidden">
+          <div className="bg-[#5C3D2E] text-white text-center py-2 font-lora text-xs uppercase tracking-widest">
             Tiệc Thân Mật Tại Nhà Trai
           </div>
           <div className="p-5 bg-white/60">
             {/* Time row */}
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="font-lora text-[#6d0208] text-[18px] font-semibold">
+              <div className="font-lora text-[#5C3D2E] text-[18px] font-semibold">
                 15 giờ 30 phút
               </div>
-              <div className="w-px h-8 bg-[#6d0208]/30" />
+              <div className="w-px h-8 bg-[#5C3D2E]/30" />
               <div className="flex gap-1">
                 {["19", "09", "26"].map((n, i) => (
                   <div
                     key={i}
-                    className="font-lora text-[#6d0208] font-bold text-[20px] leading-none"
+                    className="font-lora text-[#5C3D2E] font-bold text-[20px] leading-none"
                   >
                     {n}
                     {i < 2 && (
-                      <span className="text-[#6d0208]/50 mx-0.5">/</span>
+                      <span className="text-[#5C3D2E]/50 mx-0.5">/</span>
                     )}
                   </div>
                 ))}
               </div>
-              <div className="w-px h-8 bg-[#6d0208]/30" />
+              <div className="w-px h-8 bg-[#5C3D2E]/30" />
               <div className="font-lora text-neutral-600 text-[14px]">
                 Thứ Bảy
               </div>
@@ -131,8 +131,8 @@ export default function CeremonyDetails() {
               (Tức ngày 9 tháng 8 năm Bính Ngọ)
             </p>
 
-            <div className="border-t border-[#6d0208]/10 pt-4">
-              <div className="text-xs uppercase tracking-widest text-[#6d0208]/70 font-lora mb-1 text-center">
+            <div className="border-t border-[#5C3D2E]/10 pt-4">
+              <div className="text-xs uppercase tracking-widest text-[#5C3D2E]/70 font-lora mb-1 text-center">
                 Địa điểm
               </div>
               
@@ -146,7 +146,7 @@ export default function CeremonyDetails() {
                   href="https://www.google.com/maps/place/khu+6+v%C4%A9nh+l%E1%BA%A1i+l%C3%A2m+thao+ph%C3%BA+th%E1%BB%8D/@21.2598025,105.3423005,1146m/data=!3m2!1e3!4b1!4m6!3m5!1s0x31348d0074bcc6cb:0xdf003758a935b816!8m2!3d21.2598025!4d105.3423005!16s%2Fg%2F11yfmtsbwm!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-[#6d0208] text-white font-lora text-xs uppercase tracking-widest px-5 py-2 rounded-full hover:bg-[#8a0210] transition-colors"
+                  className="flex items-center gap-2 bg-[#5C3D2E] text-white font-lora text-xs uppercase tracking-widest px-5 py-2 rounded-full hover:bg-[#7d5740] transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -169,31 +169,31 @@ export default function CeremonyDetails() {
         </div>
 
         {/* Event 3: Tiệc Thân Mật Tại Nhà Gái */}
-        <div className="border border-[#6d0208]/20 rounded-lg overflow-hidden">
-          <div className="bg-[#6d0208] text-white text-center py-2 font-lora text-xs uppercase tracking-widest">
+        <div className="border border-[#5C3D2E]/20 rounded-lg overflow-hidden">
+          <div className="bg-[#5C3D2E] text-white text-center py-2 font-lora text-xs uppercase tracking-widest">
             Tiệc Thân Mật Tại Nhà Gái
           </div>
           <div className="p-5 bg-white/60">
             {/* Time row */}
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="font-lora text-[#6d0208] text-[18px] font-semibold">
+              <div className="font-lora text-[#5C3D2E] text-[18px] font-semibold">
                 10 giờ
               </div>
-              <div className="w-px h-8 bg-[#6d0208]/30" />
+              <div className="w-px h-8 bg-[#5C3D2E]/30" />
               <div className="flex gap-1">
                 {["19", "09", "26"].map((n, i) => (
                   <div
                     key={i}
-                    className="font-lora text-[#6d0208] font-bold text-[20px] leading-none"
+                    className="font-lora text-[#5C3D2E] font-bold text-[20px] leading-none"
                   >
                     {n}
                     {i < 2 && (
-                      <span className="text-[#6d0208]/50 mx-0.5">/</span>
+                      <span className="text-[#5C3D2E]/50 mx-0.5">/</span>
                     )}
                   </div>
                 ))}
               </div>
-              <div className="w-px h-8 bg-[#6d0208]/30" />
+              <div className="w-px h-8 bg-[#5C3D2E]/30" />
               <div className="font-lora text-neutral-600 text-[14px]">
                 Thứ Bảy
               </div>
@@ -203,8 +203,8 @@ export default function CeremonyDetails() {
               (Tức ngày 9 tháng 8 năm Bính Ngọ)
             </p>
 
-            <div className="border-t border-[#6d0208]/10 pt-4">
-              <div className="text-xs uppercase tracking-widest text-[#6d0208]/70 font-lora mb-1 text-center">
+            <div className="border-t border-[#5C3D2E]/10 pt-4">
+              <div className="text-xs uppercase tracking-widest text-[#5C3D2E]/70 font-lora mb-1 text-center">
                 Địa điểm
               </div>
 
@@ -213,7 +213,7 @@ export default function CeremonyDetails() {
               </div>
 
               {/* Embedded map */}
-              {/* <div className="mt-4 rounded-lg overflow-hidden border border-[#6d0208]/15">
+              {/* <div className="mt-4 rounded-lg overflow-hidden border border-[#5C3D2E]/15">
                 <iframe
                   title="Bản đồ tư gia nhà gái - Ngõ 69 Đốc Ngữ, Phường Nông Trang, Phú Thọ"
                   src="https://www.google.com/maps?q=21.326645,105.372803&hl=vi&z=16&output=embed"
@@ -232,7 +232,7 @@ export default function CeremonyDetails() {
                   href="https://www.google.com/maps/search/?api=1&query=21.326645%2C105.372803"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-[#6d0208] text-white font-lora text-xs uppercase tracking-widest px-5 py-2 rounded-full hover:bg-[#8a0210] transition-colors"
+                  className="flex items-center gap-2 bg-[#5C3D2E] text-white font-lora text-xs uppercase tracking-widest px-5 py-2 rounded-full hover:bg-[#7d5740] transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

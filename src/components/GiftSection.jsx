@@ -31,10 +31,10 @@ function GiftModal({ isOpen, onClose, person }) {
       >
         {/* Header title */}
         <div className="pt-6 px-6 text-center">
-          <div className="font-dancing text-[#6d0208] text-[30px] leading-tight">
+          <div className="font-dancing text-[#5C3D2E] text-[30px] leading-tight">
             {data.title}
           </div>
-          <div className="w-14 h-px bg-[#6d0208]/40 mx-auto mt-2" />
+          <div className="w-14 h-px bg-[#5C3D2E]/40 mx-auto mt-2" />
         </div>
 
         {/* QR code + info */}
@@ -51,7 +51,7 @@ function GiftModal({ isOpen, onClose, person }) {
           </div>
           <button
             onClick={onClose}
-            className="mt-2 border border-[#6d0208] text-[#6d0208] font-lora uppercase tracking-widest text-[12px] px-6 py-2 rounded-full hover:bg-[#6d0208] hover:text-white transition-colors"
+            className="mt-2 border border-[#5C3D2E] text-[#5C3D2E] font-lora uppercase tracking-widest text-[12px] px-6 py-2 rounded-full hover:bg-[#5C3D2E] hover:text-white transition-colors"
           >
             Đóng
           </button>
@@ -67,10 +67,10 @@ export default function GiftSection() {
   return (
     <div className="bg-paper py-10 px-5">
       <div className="text-center mb-7">
-        <div className="font-dancing text-[#6d0208] text-[40px] leading-none">
+        <div className="font-dancing text-[#5C3D2E] text-[40px] leading-none">
           Quà mừng cưới
         </div>
-        <div className="w-16 h-px bg-[#6d0208]/40 mx-auto mt-3 mb-3" />
+        <div className="w-16 h-px bg-[#5C3D2E]/40 mx-auto mt-3 mb-3" />
         <p className="font-lora italic text-neutral-500 text-[13px]">
           Sự hiện diện của quý khách là món quà lớn nhất
         </p>
@@ -79,13 +79,13 @@ export default function GiftSection() {
       <div className="flex flex-col gap-4">
         <button
           onClick={() => setModal("groom")}
-          className="animate-pulse-slow flex items-center justify-center gap-3 bg-[#6d0208] text-white font-lora uppercase tracking-widest text-[13px] py-3.5 rounded-full shadow-lg hover:bg-[#8a0210] transition-colors"
+          className="animate-pulse-slow flex items-center justify-center gap-3 bg-[#5C3D2E] text-white font-lora uppercase tracking-widest text-[13px] py-3.5 rounded-full shadow-lg hover:bg-[#7d5740] transition-colors"
         >
           🎁 Quà mừng cưới chú rể
         </button>
         <button
           onClick={() => setModal("bride")}
-          className="animate-pulse-slow flex items-center justify-center gap-3 border-2 border-[#6d0208] text-[#6d0208] font-lora uppercase tracking-widest text-[13px] py-3.5 rounded-full shadow-lg hover:bg-[#6d0208] hover:text-white transition-colors"
+          className="animate-pulse-slow flex items-center justify-center gap-3 border-2 border-[#5C3D2E] text-[#5C3D2E] font-lora uppercase tracking-widest text-[13px] py-3.5 rounded-full shadow-lg hover:bg-[#5C3D2E] hover:text-white transition-colors"
         >
           🎁 Quà mừng cưới cô dâu
         </button>

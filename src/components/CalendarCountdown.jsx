@@ -51,10 +51,10 @@ export default function CalendarCountdown() {
     <div className="bg-paper py-10 px-5">
       {/* Header */}
       <div className="text-center mb-6 relative">
-        <span className="font-lora text-[72px] text-[#6d0208]/10 leading-none select-none absolute left-1/2 -translate-x-1/2 -top-2">
+        <span className="font-lora text-[72px] text-[#5C3D2E]/10 leading-none select-none absolute left-1/2 -translate-x-1/2 -top-2">
           2026
         </span>
-        <span className="font-dancing text-[#6d0208] text-[52px] relative z-10">
+        <span className="font-dancing text-[#5C3D2E] text-[52px] relative z-10">
           Tháng Chín
         </span>
       </div>
@@ -77,7 +77,7 @@ export default function CalendarCountdown() {
               key={idx}
               className={`relative flex items-center justify-center h-8 rounded-full font-lora text-[13px] ${
                 day === 20
-                  ? "bg-[#6d0208] text-white font-bold"
+                  ? "bg-[#5C3D2E] text-white font-bold"
                   : day
                   ? "text-neutral-700"
                   : ""
@@ -108,7 +108,7 @@ export default function CalendarCountdown() {
           ].map((item, i) => (
             <div key={item.label} className="flex items-center gap-2">
               <div className="flex flex-col items-center">
-                <div className="font-lora text-[32px] font-bold text-[#6d0208] leading-none w-14 text-center">
+                <div className="font-lora text-[32px] font-bold text-[#5C3D2E] leading-none w-14 text-center">
                   {pad(item.value)}
                 </div>
                 <div className="font-lora text-[10px] uppercase tracking-widest text-neutral-500 mt-1">
@@ -116,7 +116,7 @@ export default function CalendarCountdown() {
                 </div>
               </div>
               {i < 3 && (
-                <div className="font-lora text-[28px] text-[#6d0208]/60 leading-none mb-4">
+                <div className="font-lora text-[28px] text-[#5C3D2E]/60 leading-none mb-4">
                   :
                 </div>
               )}

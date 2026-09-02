@@ -5,7 +5,7 @@ export default function QuoteSection() {
     <div
       id="groom-bride"
       className="relative overflow-hidden"
-      style={{ background: "#6d0208" }}
+      style={{ background: "#5C3D2E" }}
     >
       {/* Decorative floral images */}
       <img

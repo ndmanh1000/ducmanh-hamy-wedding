@@ -88,10 +88,10 @@ export default function MemoriesGallery() {
     <div className="bg-paper py-10 px-4">
       {/* Header */}
       <div className="text-center mb-8">
-        <div className="font-dancing text-[#6d0208] text-[46px] leading-none">
+        <div className="font-dancing text-[#5C3D2E] text-[46px] leading-none">
           Kỷ niệm của chúng mình
         </div>
-        <div className="w-16 h-px bg-[#6d0208]/40 mx-auto mt-3" />
+        <div className="w-16 h-px bg-[#5C3D2E]/40 mx-auto mt-3" />
       </div>
 
       {/* Top 3-image collage */}
