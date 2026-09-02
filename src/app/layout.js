@@ -1,15 +1,15 @@
 import "./globals.css";
 
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://ducmanh-hamy-wedding.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.manhmy-wedding.website/'),
   title: "Đức Mạnh & Hà My - 20.09.2026 | Lễ Thành Hôn",
-  description: "Trân trọng kính mời Quý khách tới dự bữa tiệc chung vui cùng gia đình chúng tôi!",
+  description: "Thân mời các quý ông bà, cô bác, anh chị em gần xa về chung vui cùng vợ chồng chúng con!",
   icons: {
     icon: "/templates/wedding/002/images/decor-flower1.png",
   },
   openGraph: {
     title: "Đức Mạnh & Hà My - 20.09.2026 | Lễ Thành Hôn",
-    description: "Trân trọng kính mời Quý khách tới dự bữa tiệc chung vui cùng gia đình chúng tôi!",
+    description: "Thân mời các quý ông bà, cô bác, anh chị em gần xa về chung vui cùng vợ chồng chúng con!",
     images: [
       {
         url: "/assets/images/og-image.jpg",
@@ -25,7 +25,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Đức Mạnh & Hà My - 20.09.2026 | Lễ Thành Hôn",
-    description: "Trân trọng kính mời Quý khách tới dự bữa tiệc chung vui cùng gia đình chúng tôi!",
+    description: "Thân mời các quý ông bà, cô bác, anh chị em gần xa về chung vui cùng vợ chồng chúng con!",
     images: ["/assets/images/og-image.jpg"],
   },
 };
