@@ -91,6 +91,21 @@ body {
   font-family: "Lora", Arial, Helvetica, sans-serif;
 }
 
+/* Chặn iOS Safari tự zoom khi focus vào input/textarea.
+   iOS chỉ zoom khi font-size của field < 16px -> ép tối thiểu 16px trên mobile. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (max-width: 639px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

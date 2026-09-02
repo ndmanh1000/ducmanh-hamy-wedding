@@ -161,14 +161,14 @@ export default function GuestbookSection() {
               placeholder="Nhập tên của bạn *"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full border border-[#5C3D2E]/20 rounded-xl px-4 py-3 font-lora text-[14px] text-neutral-700 bg-white/70 focus:outline-none focus:border-[#B96420] focus:bg-white focus:shadow-[0_0_0_3px_rgba(185,100,32,0.12)] transition-all duration-300 placeholder:text-neutral-400"
+              className="w-full border border-[#5C3D2E]/20 rounded-xl px-4 py-3 font-lora text-[16px] text-neutral-700 bg-white/70 focus:outline-none focus:border-[#B96420] focus:bg-white focus:shadow-[0_0_0_3px_rgba(185,100,32,0.12)] transition-all duration-300 placeholder:text-neutral-400"
             />
             <textarea
               placeholder="Nhập lời chúc của bạn *"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               rows={4}
-              className="w-full border border-[#5C3D2E]/20 rounded-xl px-4 py-3 font-lora text-[14px] text-neutral-700 bg-white/70 focus:outline-none focus:border-[#B96420] focus:bg-white focus:shadow-[0_0_0_3px_rgba(185,100,32,0.12)] transition-all duration-300 placeholder:text-neutral-400 resize-none"
+              className="w-full border border-[#5C3D2E]/20 rounded-xl px-4 py-3 font-lora text-[16px] text-neutral-700 bg-white/70 focus:outline-none focus:border-[#B96420] focus:bg-white focus:shadow-[0_0_0_3px_rgba(185,100,32,0.12)] transition-all duration-300 placeholder:text-neutral-400 resize-none"
             />
             <button
               type="submit"

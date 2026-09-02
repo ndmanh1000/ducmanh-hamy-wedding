@@ -30,6 +30,14 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  // Vẫn cho phép người dùng tự pinch-zoom (chuẩn a11y),
+  // việc chặn zoom khi focus input được xử lý bằng font-size >= 16px
+  maximumScale: 5,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="vi" className="h-full scroll-smooth antialiased">
