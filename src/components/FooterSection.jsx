@@ -29,7 +29,7 @@ export default function FooterSection() {
       {/* Branding footer */}
       <div className="bg-[#5C3D2E] py-4 text-center">
         <p className="font-lora text-white/70 text-[12px] tracking-wide">
-          Đức Mạnh & Hà My - 20.09.2026
+          Đức Mạnh & Hà My
         </p>
       </div>
     </>

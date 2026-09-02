@@ -34,7 +34,7 @@ export default function QuoteSection() {
 
         <div className="my-4 w-[1px] h-12 bg-white/50" />
 
-        <h4 className="font-lora italic text-white/90 text-[17px] leading-[1.7] max-w-[260px]">
+        <h4 className="font-lora italic text-white/90 text-[15px] leading-[1.7] max-w-[260px]">
           Khởi đầu cho một tâm hồn đồng điệu
           <br />
           vững vàng và vĩnh cửu theo thời gian.

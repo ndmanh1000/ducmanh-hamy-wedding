@@ -6,7 +6,7 @@ export default function SaveTheDateHero({ isOpened }) {
       id="card-banner"
       className="relative w-full aspect-[420/692] bg-cover bg-top bg-no-repeat overflow-hidden"
       style={{
-        backgroundImage: "url(/assets/images/bin11.webp)",
+        backgroundImage: "url(/assets/images/bin1.webp)",
       }}
     >
       {/* Bottom gradient overlay */}

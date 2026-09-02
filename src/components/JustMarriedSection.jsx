@@ -6,7 +6,7 @@ export default function JustMarriedSection() {
       className="relative w-full aspect-[4/3] bg-cover overflow-hidden"
       style={{
         backgroundImage:
-          "url(/assets/images/bin4.webp)",
+          "url(/assets/images/ccao.webp)",
         backgroundPosition: "center 30%",
       }}
     >
